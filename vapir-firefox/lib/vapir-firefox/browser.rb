@@ -741,7 +741,8 @@ module Vapir
       end
       alias each each_browser
       def browsers
-        Enumerator.new(self, :each_browser)
+        #Enumerator.new(self, :each_browser)
+        to_enum(:each_browser)
       end
       def each_browser_window_object
         mediator=firefox_socket.Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(firefox_socket.Components.interfaces.nsIWindowMediator)
@@ -753,7 +754,8 @@ module Vapir
         nil
       end
       def browser_window_objects
-        Enumerator.new(self, :each_browser_window_object)
+        #Enumerator.new(self, :each_browser_window_object)
+        to_enum(:each_browser_window_object)
       end
       def each_window_object
         mediator=firefox_socket.Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(firefox_socket.Components.interfaces.nsIWindowMediator)
@@ -765,7 +767,8 @@ module Vapir
         nil
       end
       def window_objects
-        Enumerator.new(self, :each_window_object)
+        #Enumerator.new(self, :each_window_object)
+        to_enum(:each_window_object)
       end
     end
     
